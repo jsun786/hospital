@@ -1,0 +1,21 @@
+cc_test(
+	name="hospital_test",
+	srcs=["hospital_test.cpp"],
+	copts=["-Iexternal/gtest/include"],
+	deps=[
+		"@gtest//:main",
+		"//org",
+		"//data"
+	]
+)
+
+cc_test(
+	name="patient_test",
+	srcs=["patient_test.cpp"],
+	copts=["-Iexternal/gtest/include"],
+	deps=[
+		"@gtest//:main",
+		"//org",
+		"//data"
+	]
+)
