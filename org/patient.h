@@ -7,8 +7,9 @@
 #ifndef ORG_PATIENT_H_
 #define ORG_PATIENT_H_
 
-#include <vector>
 #include <algorithm>
+#include <vector>
+
 #include "data/patients.h"
 
 #define HAS(v, i) (std::find(v.begin(), v.end(), i) != v.end())
@@ -23,6 +24,7 @@ class Patient {
   bool addProcedure(const ProcedureKind procedure);
   double billing();
   virtual double liability() = 0;
+  virtual ~Patient() = default;  // Added to address the warning when deleting
 };
 
 class InPatient : public Patient {
